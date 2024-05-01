@@ -1,5 +1,6 @@
 package com.code.inspections.ali.name;
 
+import com.code.inspections.bundle.CodeInspectionsBundle;
 import com.intellij.codeInspection.AbstractBaseJavaLocalInspectionTool;
 import com.intellij.codeInspection.LocalQuickFixOnPsiElement;
 import com.intellij.codeInspection.ProblemHighlightType;
@@ -8,7 +9,6 @@ import com.intellij.codeInspection.util.IntentionName;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
-import com.code.inspections.bundle.CodeInspectionsBundle;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -17,8 +17,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * 【强制】类名使用 UpperCamelCase 风格，以下情形例外：DO / PO / DTO / BO / VO / UID 等。
  *
- * @author zijun.lzh
- * @version ClassNameUpperCaseInspection.java, v 0.1 2024/5/1 zijun.lzh
+ * @author liuzhihang
+ * @version ClassNameUpperCaseInspection.java, v 0.1 2024/5/1 liuzhihang
  */
 public class ClassNameUpperCaseInspection extends AbstractBaseJavaLocalInspectionTool {
 

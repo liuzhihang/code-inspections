@@ -1,5 +1,6 @@
 ## 开发指南
-本工程全程使用 AI 进行开发，推荐使用[通义灵码插件](https://tongyi.aliyun.com/lingma/download)进行开发。
+
+本工程全程使用 AI 进行开发，推荐使用[通义灵码插件](https://tongyi.aliyun.com/lingma/download)进行开发，如果你能使用 GPT4 也可以使用 GPT4 进行开发。
 
 ### 1. 开发代码
 开发中直接通过窗口进行对话即可，下面是对话术语，自己可以使用其他术语进行开发。

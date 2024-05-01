@@ -15,8 +15,8 @@ import javax.swing.*;
 /**
  * 【强制】方法名、参数名都统一使用 lowerCamelCase 风格的检查工具类。
  *
- * @author zijun.lzh
- * @version MethodAndParameterNamingInspection.java, v 0.1 2024/5/1 zijun.lzh
+ * @author liuzhihang
+ * @version MethodAndParameterNamingInspection.java, v 0.1 2024/5/1 liuzhihang
  */
 public class MethodAndParameterNamingInspection extends AbstractBaseJavaLocalInspectionTool {
 

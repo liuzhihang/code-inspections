@@ -40,5 +40,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.class.name.key"
                          implementationClass="com.code.inspections.ali.name.ClassNamingInspection"/>
+        <!-- 【强制】类型与中括号紧挨相连来定义数组。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.array.definition.key"
+                         implementationClass="com.code.inspections.ali.name.ArrayDefinitionInspection"/>
     </extensions>
 </idea-plugin>
