@@ -1,0 +1,64 @@
+import org.jetbrains.changelog.Changelog
+import org.jetbrains.changelog.ChangelogSectionUrlBuilder
+import org.jetbrains.changelog.ExtensionsKt
+
+plugins {
+    id 'org.jetbrains.intellij' version '1.16.1'
+    id 'org.jetbrains.changelog' version '2.1.2'
+}
+
+apply plugin: 'org.jetbrains.changelog'
+
+group project.pluginGroup
+version project.pluginVersion
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+repositories {
+    mavenLocal()
+    maven { url "https://maven.aliyun.com/repository/public" }
+    mavenCentral()
+}
+
+dependencies {
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    plugins = ['com.intellij.java']
+    pluginName = project.pluginName
+    version = project.platformVersion
+    type = project.platformType
+    downloadSources = true
+    updateSinceUntilBuild = false
+    buildSearchableOptions.enabled = false
+}
+
+patchPluginXml {
+    sinceBuild = project.pluginSinceBuild
+    untilBuild = project.pluginUntilBuild
+
+    pluginDescription.set(file(project.pluginDescription).getText('UTF-8'))
+    changeNotes.set(provider {
+        changelog.renderItem(
+                changelog.getLatest(),
+                Changelog.OutputType.HTML
+        )
+    })
+}
+
+changelog {
+    path = file("CHANGELOG.md").canonicalPath
+    header = "[${-> version.get()}] - ${ExtensionsKt.date("yyyy-MM-dd")}"
+    keepUnreleasedSection = true
+    unreleasedTerm = "[Unreleased]"
+    groups = ["Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"]
+    lineSeparator = "\n"
+    combinePreReleases = true
+    sectionUrlBuilder = { repositoryUrl, currentVersion, previousVersion, isUnreleased -> "foo" } as ChangelogSectionUrlBuilder
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

@@ -1,0 +1,40 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.liuzhihang.converter</id>
+    <vendor email="liuzhihangs@qq.com" url="https://liuzhihang.com">Liu ZhiHang</vendor>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Converter</name>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 【强制】所有编程相关的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.convention.key"
+                         implementationClass="com.code.inspections.ali.name.NamingConventionInspection"/>
+        <!-- 【强制】所有编程相关的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.chinese.pinyin.mix.key"
+                         implementationClass="com.code.inspections.ali.name.ChineseAndPinyinMixInspection"/>
+        <!-- 【强制】代码和注释中都要避免使用任何人类语言中的种族歧视性或侮辱性词语。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.sensitive.words.key"
+                         implementationClass="com.code.inspections.ali.name.SensitiveWordsInspection"/>
+        <!-- 【强制】类名使用 UpperCamelCase 风格，以下情形例外：DO / PO / DTO / BO / VO / UID 等。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.class.name.upper.case.key"
+                         implementationClass="com.code.inspections.ali.name.ClassNameUpperCaseInspection"/>
+        <!--  【强制】方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.method.name.lower.case.key"
+                         implementationClass="com.code.inspections.ali.name.MethodAndParameterNamingInspection"/>
+    </extensions>
+</idea-plugin>
