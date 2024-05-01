@@ -32,9 +32,13 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.class.name.upper.case.key"
                          implementationClass="com.code.inspections.ali.name.ClassNameUpperCaseInspection"/>
-        <!--  【强制】方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格。 -->
+        <!-- 【强制】方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格。 -->
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
-                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.method.name.lower.case.key"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.constant.name.upper.case.key"
                          implementationClass="com.code.inspections.ali.name.MethodAndParameterNamingInspection"/>
+        <!-- 【强制】抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾，测试类命名以它要测试的类的名称开始，以 Test 结尾。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.class.name.key"
+                         implementationClass="com.code.inspections.ali.name.ClassNamingInspection"/>
     </extensions>
 </idea-plugin>
