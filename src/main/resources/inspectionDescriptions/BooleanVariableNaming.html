@@ -1,0 +1,13 @@
+<html>
+<body>
+<br/>
+<b style="color: #D56561;">【强制】</b>POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列化错误。
+<p>
+    <span style="color: #F6CF6E;">&nbsp;&nbsp;说明：</span>本文 MySQL 规约中的建表约定第 1 条，表达是与否的变量采用 is_xxx 的命名方式，所以需要在设置从
+    is_xxx 到 xxx 的映射关系。
+    <br/>
+    <span style="color: #E1736F;">&nbsp;&nbsp;反例：</span>定义为布尔类型 Boolean isDeleted 的字段，它的 getter 方法也是
+    isDeleted()，部分框架在反向解析时，“误以为”对应的字段名称是 deleted，导致字段获取不到，得到意料之外的结果或抛出异常。
+</p>
+</body>
+</html>

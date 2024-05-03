@@ -44,5 +44,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.array.definition.key"
                          implementationClass="com.code.inspections.ali.name.ArrayDefinitionInspection"/>
+        <!-- 【强制】POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列化错误。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.boolean.variable.key"
+                         implementationClass="com.code.inspections.ali.name.BooleanVariableNamingInspection"/>
     </extensions>
 </idea-plugin>
