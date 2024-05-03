@@ -13,6 +13,12 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 /**
  * 【强制】类名使用 UpperCamelCase 风格，以下情形例外：DO / PO / DTO / BO / VO / UID 等。
@@ -22,6 +28,17 @@ import org.jetbrains.annotations.Nullable;
  */
 public class ClassNameUpperCaseInspection extends AbstractBaseJavaLocalInspectionTool {
 
+    /**
+     * 自定义后缀
+     */
+    private List<String> customSuffixes = new ArrayList<>() {{
+        add("DO");
+        add("PO");
+        add("DTO");
+        add("BO");
+        add("VO");
+        add("UID");
+    }};
     /**
      * 错误提示信息
      */
@@ -67,12 +84,35 @@ public class ClassNameUpperCaseInspection extends AbstractBaseJavaLocalInspectio
              * @return 如果是异常类名，返回true；否则返回false
              */
             private boolean isExceptionClassName(String className) {
-                return className.endsWith("DO") || className.endsWith("PO") ||
-                        className.endsWith("DTO") || className.endsWith("BO") ||
-                        className.endsWith("VO") || className.endsWith("UID");
+                for (String customSuffix : customSuffixes) {
+                    if (className.endsWith(customSuffix.trim())) {
+                        return true;
+                    }
+                }
+                return false;
             }
         };
     }
+
+    /**
+     * 创建选项面板
+     *
+     * @return 选项面板
+     */
+    @Override
+    public JComponent createOptionsPanel() {
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT)); // 使用FlowLayout以左对齐方式布局
+
+        JLabel label = new JLabel("例外后缀：");
+        panel.add(label);
+
+        JTextField inputField = new JTextField(customSuffixes.stream().collect(Collectors.joining(",")), 20);
+        inputField.setToolTipText("Enter comma-separated class name suffixes.");
+        panel.add(inputField);
+
+        return panel;
+    }
+
 
     /**
      * 提供一个快速修正，将类名改为UpperCamelCase
