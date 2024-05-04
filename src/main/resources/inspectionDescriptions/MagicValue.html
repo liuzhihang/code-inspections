@@ -1,0 +1,20 @@
+<html>
+<body>
+<br/>
+<b style="color: #D56561;">【强制】</b>不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。
+<p>
+    <span style="color: #E1736F;">&nbsp;&nbsp;反例：</span>
+<pre>
+        <code>
+            // 开发者 A 定义了缓存的 key。
+            String key = "Id#taobao_" + tradeId;
+            cache.put(key, value);
+            // 开发者 B 使用缓存时直接复制少了下划线，即 key 是"Id#taobao" + tradeId，导致出现故障。
+            String key = "Id#taobao" + tradeId;
+            cache.get(key);
+        </code>
+    </pre>
+</p>
+
+</body>
+</html>

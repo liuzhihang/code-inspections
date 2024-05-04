@@ -56,5 +56,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.enum.naming.key"
                          implementationClass="com.code.inspections.ali.name.EnumNamingInspection"/>
+        <!--  【强制】不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Constant" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.constant.magic.value.key"
+                         implementationClass="com.code.inspections.ali.constant.MagicValueInspection"/>
     </extensions>
 </idea-plugin>
