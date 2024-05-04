@@ -60,5 +60,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Constant" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.constant.magic.value.key"
                          implementationClass="com.code.inspections.ali.constant.MagicValueInspection"/>
+        <!--  【强制】long 或 Long 赋值时，数值后使用大写 L，不能是小写 l，小写容易跟数字混淆，造成误解。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Constant" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.constant.lowercase.long.literal.key"
+                         implementationClass="com.code.inspections.ali.constant.LowercaseLongLiteralInspection"/>
     </extensions>
 </idea-plugin>
