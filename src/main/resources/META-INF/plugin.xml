@@ -48,13 +48,13 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.boolean.variable.key"
                          implementationClass="com.code.inspections.ali.name.BooleanVariableNamingInspection"/>
-        <!-- 【强制】包名使用小写字母，单词间用点分隔，力求语义表达完整清楚，不要嫌名字长。   -->
-        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
-                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.package.naming.key"
-                         implementationClass="com.code.inspections.ali.name.PackageNamingInspection"/>
         <!--  【强制】避免在子父类的成员变量之间、或者不同代码块的局部变量之间采用完全相同的命名，使可理解性降低。  -->
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.duplicate.variable.naming.key"
                          implementationClass="com.code.inspections.ali.name.DuplicateVariableNamingInspection"/>
+        <!--  【参考】枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.enum.naming.key"
+                         implementationClass="com.code.inspections.ali.name.EnumNamingInspection"/>
     </extensions>
 </idea-plugin>

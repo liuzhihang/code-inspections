@@ -6,6 +6,7 @@ import com.intellij.codeInspection.LocalQuickFix;
 import com.intellij.codeInspection.ProblemDescriptor;
 import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtilCore;
 import com.intellij.openapi.project.Project;
@@ -26,6 +27,11 @@ import org.jetbrains.annotations.NotNull;
  */
 public class ClassNamingInspection extends AbstractBaseJavaLocalInspectionTool {
 
+    /**
+     * LOG
+     */
+    public static final Logger LOG = Logger.getInstance(ClassNamingInspection.class); 
+    
     /**
      * 提示信息
      */
@@ -162,13 +168,11 @@ public class ClassNamingInspection extends AbstractBaseJavaLocalInspectionTool {
             PsiElement element = descriptor.getPsiElement();
             // 检查问题元素是否为类，如果是，则重命名
             if (element instanceof PsiClass psiClass) {
-                // 在写入操作中重命名类
-                new WriteCommandAction.Simple(project, psiClass.getContainingFile()) {
-                    @Override
-                    protected void run() {
-                        psiClass.setName(newName);
-                    }
-                }.run();
+                // 在写入操作中执行类名和文件重命名
+                WriteCommandAction.runWriteCommandAction(project, () -> {
+                    // 修改类名
+                    psiClass.setName(newName);
+                });
             }
         }
     }

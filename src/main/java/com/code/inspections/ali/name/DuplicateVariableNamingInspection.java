@@ -37,7 +37,7 @@ public class DuplicateVariableNamingInspection extends AbstractBaseJavaLocalInsp
     @NotNull
     @Override
     public PsiElementVisitor buildVisitor(@NotNull ProblemsHolder holder, boolean isOnTheFly) {
-        return new JavaRecursiveElementWalkingVisitor() {
+        return new JavaElementVisitor() {
             /**
              * 访问字段，检查该字段是否在超类中已定义。
              *
@@ -70,6 +70,7 @@ public class DuplicateVariableNamingInspection extends AbstractBaseJavaLocalInsp
                 if (psiClass.isEnum() || psiClass.isInterface()) {
                     return; // Enums and interfaces do not have getters/setters to check.
                 }
+
                 PsiClass superClass = psiClass.getSuperClass();
                 if (superClass != null) {
                     for (PsiField superField : superClass.getFields()) {
