@@ -72,5 +72,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.braces.style.key"
                          implementationClass="com.code.inspections.ali.style.BracesStyleInspection"/>
+        <!--  【强制】左小括号和右边相邻字符之间不需要空格；右小括号和左边相邻字符之间也不需要空格；而左大括号前需要加空格。详见第 5 条下方正例提示。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.braces.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.BracesSpacesInspection"/>
     </extensions>
 </idea-plugin>
