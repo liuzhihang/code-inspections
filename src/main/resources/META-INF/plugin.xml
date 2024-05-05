@@ -76,5 +76,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.braces.spaces.key"
                          implementationClass="com.code.inspections.ali.style.BracesSpacesInspection"/>
+        <!--  【强制】if / for / while / switch / do 等保留字与左右括号之间都必须加空格。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.reserved.words.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.ReservedWordsSpacesInspection"/>
     </extensions>
 </idea-plugin>
