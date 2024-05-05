@@ -80,5 +80,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.reserved.words.spaces.key"
                          implementationClass="com.code.inspections.ali.style.ReservedWordsSpacesInspection"/>
+        <!--  【强制】任何二目、三目运算符的左右两边都需要加一个空格。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.operator.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.OperatorSpacingInspection"/>
     </extensions>
 </idea-plugin>
