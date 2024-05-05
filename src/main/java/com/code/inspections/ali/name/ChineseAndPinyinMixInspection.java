@@ -1,12 +1,12 @@
 package com.code.inspections.ali.name;
 
+import com.code.inspections.bundle.CodeInspectionsBundle;
 import com.intellij.codeInspection.AbstractBaseJavaLocalInspectionTool;
 import com.intellij.codeInspection.ProblemHighlightType;
 import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.psi.JavaElementVisitor;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.PsiIdentifier;
-import com.code.inspections.bundle.CodeInspectionsBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Pattern;
@@ -25,7 +25,7 @@ public class ChineseAndPinyinMixInspection extends AbstractBaseJavaLocalInspecti
     /**
      * 错误提示
      */
-    public static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.chinese.pinyin.mix.message");
+    private static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.chinese.pinyin.mix.message");
     /**
      * 匹配拼音与英文混合
      */

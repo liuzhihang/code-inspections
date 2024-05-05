@@ -18,11 +18,11 @@ public class NamingConventionInspection extends AbstractBaseJavaLocalInspectionT
     /**
      * 命名不符合规范的问题提示信息
      */
-    public static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.convention.message");
+    private static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.convention.message");
     /**
      * 命名不符合规范的问题修复提示信息
      */
-    public static final String QUICK_FIX_NAME = CodeInspectionsBundle.message("ali.p3c.name.convention.fix");
+    private static final String QUICK_FIX_NAME = CodeInspectionsBundle.message("ali.p3c.name.convention.fix");
 
     /**
      * 构建并返回一个访问者对象，用于检查Java标识符是否符合命名规范。

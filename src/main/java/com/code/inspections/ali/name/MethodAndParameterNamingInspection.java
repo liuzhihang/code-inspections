@@ -23,15 +23,12 @@ public class MethodAndParameterNamingInspection extends AbstractBaseJavaLocalIns
     /**
      * 提示信息
      */
-    public static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.method.name.lower.case.message");
+    private static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.method.name.lower.case.message");
 
     /**
      * 快速修复
      */
-    public static final String QUICK_FIX = CodeInspectionsBundle.message("ali.p3c.name.method.name.lower.case.fix");
-
-    // 是否忽略Javadoc中的命名
-    public boolean ignoreInJavadoc = false;
+    private static final String QUICK_FIX = CodeInspectionsBundle.message("ali.p3c.name.method.name.lower.case.fix");
 
     /**
      * 创建设置面板
@@ -106,10 +103,6 @@ public class MethodAndParameterNamingInspection extends AbstractBaseJavaLocalIns
      * @return 是否符合lowerCamelCase风格
      */
     private boolean isValidName(String name, PsiElement element) {
-        // 如果配置了忽略Javadoc中的名称，则进行忽略判断
-        if (ignoreInJavadoc && isInsideJavadoc(element)) {
-            return true;
-        }
         // 使用正则表达式检查名称是否符合lowerCamelCase风格
         return name.matches("^[a-z][a-zA-Z0-9]*$");
     }

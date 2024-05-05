@@ -25,12 +25,12 @@ public class EnumNamingInspection extends AbstractBaseJavaLocalInspectionTool {
     /**
      * 枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。
      */
-    public static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.enum.naming.message");
+    private static final String MESSAGE = CodeInspectionsBundle.message("ali.p3c.name.enum.naming.message");
 
     /**
      * 修复
      */
-    public static final String QUICK_FIX = CodeInspectionsBundle.message("ali.p3c.name.enum.naming.fix");
+    private static final String QUICK_FIX = CodeInspectionsBundle.message("ali.p3c.name.enum.naming.fix");
 
 
     /**

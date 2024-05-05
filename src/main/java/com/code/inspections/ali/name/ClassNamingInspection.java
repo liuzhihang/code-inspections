@@ -30,7 +30,7 @@ public class ClassNamingInspection extends AbstractBaseJavaLocalInspectionTool {
     /**
      * LOG
      */
-    public static final Logger LOG = Logger.getInstance(ClassNamingInspection.class); 
+    private static final Logger LOG = Logger.getInstance(ClassNamingInspection.class); 
     
     /**
      * 提示信息
