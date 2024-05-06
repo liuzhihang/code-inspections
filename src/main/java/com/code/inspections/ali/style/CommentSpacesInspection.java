@@ -43,9 +43,12 @@ public class CommentSpacesInspection extends LocalInspectionTool {
              * @param comment 代表被访问的注释元素。
              */
             @Override
-            public void visitComment(PsiComment comment) {
+            public void visitComment(@NotNull PsiComment comment) {
                 // 获取注释的文本内容
                 String commentText = comment.getText();
+                if (!commentText.startsWith("//")) {
+                    return;
+                }
                 // 寻找双斜杠后的第一个字符
                 int start = commentText.indexOf("//") + 2;
                 if (start < commentText.length()) {

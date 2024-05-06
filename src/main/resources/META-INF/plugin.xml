@@ -96,5 +96,14 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.cast.spaces.key"
                          implementationClass="com.code.inspections.ali.style.NoSpaceBetweenCastAndValueInspection"/>
+        <!-- 【强制】 单行字符数限制不超过 120 个，超出需要换行，换行时遵循如下原则：
+                1）第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩进，参考示例。
+                2）运算符与下文一起换行。
+                3）方法调用的点符号与下文一起换行。
+                4）方法调用中的多个参数需要换行时，在逗号后进行。
+                5）在括号前不要换行，见反例。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.line.length.key"
+                         implementationClass="com.code.inspections.ali.style.LineLengthLimitInspection"/>
     </extensions>
 </idea-plugin>
