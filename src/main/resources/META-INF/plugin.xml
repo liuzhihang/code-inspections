@@ -84,5 +84,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.operator.spaces.key"
                          implementationClass="com.code.inspections.ali.style.OperatorSpacingInspection"/>
+        <!--  【强制】采用 4 个空格缩进，禁止使用 Tab 字符。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.indent.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.IndentationAndTabInspection"/>
     </extensions>
 </idea-plugin>
