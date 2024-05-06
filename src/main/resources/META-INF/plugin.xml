@@ -92,5 +92,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.comment.spaces.key"
                          implementationClass="com.code.inspections.ali.style.CommentSpacesInspection"/>
+        <!--  【强制】在进行类型强制转换时，右括号与强制转换值之间不需要任何空格隔开。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.cast.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.NoSpaceBetweenCastAndValueInspection"/>
     </extensions>
 </idea-plugin>
