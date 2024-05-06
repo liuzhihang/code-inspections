@@ -88,5 +88,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.indent.spaces.key"
                          implementationClass="com.code.inspections.ali.style.IndentationAndTabInspection"/>
+        <!--  【强制】注释的双斜线与注释内容之间有且仅有一个空格。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.comment.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.CommentSpacesInspection"/>
     </extensions>
 </idea-plugin>
