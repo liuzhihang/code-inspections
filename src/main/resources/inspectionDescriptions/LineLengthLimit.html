@@ -1,0 +1,40 @@
+<html>
+<body>
+<br/>
+<b style="color: #D56561;">【强制】</b>单行字符数限制不超过 120 个，超出需要换行，换行时遵循如下原则：
+<br/>1）第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩进，参考示例。
+<br/>2）运算符与下文一起换行。
+<br/>3）方法调用的点符号与下文一起换行。
+<br/>4）方法调用中的多个参数需要换行时，在逗号后进行。
+<br/>5）在括号前不要换行，见反例。
+<p>
+    <span style="color: #6AAB71;">&nbsp;&nbsp;正例：</span>
+<pre><code>
+StringBuilder builder = new StringBuilder();
+// 超过 120 个字符的情况下，换行缩进 4 个空格，并且方法前的点号一起换行
+builder.append("yang").append("hao")...
+    .append("chen")...
+    .append("chen")...
+    .append("chen");
+</code></pre>
+<br/>
+<span style="color: #E1736F;">&nbsp;&nbsp;反例：</span>
+<pre><code>
+StringBuilder builder = new StringBuilder();
+// 超过 120 个字符的情况下，不要在括号前换行
+builder.append("you").append("are")...append
+    ("lucky");
+// 参数很多的方法调用可能超过 120 个字符，逗号后才是换行处
+method(args1, args2, args3, ...
+    , argsX);
+</code></pre>
+</p>
+
+
+<!-- tooltip end -->
+<p>Text after this comment will only be shown in the settings of the inspection.</p>
+
+<p>To open related settings directly from the description, add a link with `settings://$` optionally followed by `?$` to pre-select a UI
+    element.</p>
+</body>
+</html>

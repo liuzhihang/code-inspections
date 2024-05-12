@@ -1,0 +1,113 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.liuzhihang.code.inspections</id>
+    <vendor email="liuzhihangs@qq.com" url="https://liuzhihang.com">Liu ZhiHang</vendor>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>CodeInspections</name>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 【强制】所有编程相关的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.convention.key"
+                         implementationClass="com.code.inspections.ali.name.NamingConventionInspection"/>
+        <!-- 【强制】所有编程相关的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.chinese.pinyin.mix.key"
+                         implementationClass="com.code.inspections.ali.name.ChineseAndPinyinMixInspection"/>
+        <!-- 【强制】代码和注释中都要避免使用任何人类语言中的种族歧视性或侮辱性词语。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.sensitive.words.key"
+                         implementationClass="com.code.inspections.ali.name.SensitiveWordsInspection"/>
+        <!-- 【强制】类名使用 UpperCamelCase 风格，以下情形例外：DO / PO / DTO / BO / VO / UID 等。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.class.name.upper.case.key"
+                         implementationClass="com.code.inspections.ali.name.ClassNameUpperCaseInspection"/>
+        <!-- 【强制】方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.constant.name.upper.case.key"
+                         implementationClass="com.code.inspections.ali.name.MethodAndParameterNamingInspection"/>
+        <!-- 【强制】抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾，测试类命名以它要测试的类的名称开始，以 Test 结尾。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.class.name.key"
+                         implementationClass="com.code.inspections.ali.name.ClassNamingInspection"/>
+        <!-- 【强制】类型与中括号紧挨相连来定义数组。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.array.definition.key"
+                         implementationClass="com.code.inspections.ali.name.ArrayDefinitionInspection"/>
+        <!-- 【强制】POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列化错误。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.boolean.variable.key"
+                         implementationClass="com.code.inspections.ali.name.BooleanVariableNamingInspection"/>
+        <!--  【强制】避免在子父类的成员变量之间、或者不同代码块的局部变量之间采用完全相同的命名，使可理解性降低。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.duplicate.variable.naming.key"
+                         implementationClass="com.code.inspections.ali.name.DuplicateVariableNamingInspection"/>
+        <!--  【参考】枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Name" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.name.enum.naming.key"
+                         implementationClass="com.code.inspections.ali.name.EnumNamingInspection"/>
+        <!--  【强制】不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Constant" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.constant.magic.value.key"
+                         implementationClass="com.code.inspections.ali.constant.MagicValueInspection"/>
+        <!--  【强制】long 或 Long 赋值时，数值后使用大写 L，不能是小写 l，小写容易跟数字混淆，造成误解。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Constant" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.constant.lowercase.long.literal.key"
+                         implementationClass="com.code.inspections.ali.constant.LowercaseLongLiteralInspection"/>
+        <!--  如果大括号内为空，简洁地写成{}即可，大括号中间无需换行和空格；如果是非空代码块，则：
+                1）左大括号前不换行。
+                2）左大括号后换行。
+                3）右大括号前换行。
+                4）右大括号后还有 else 等代码则不换行；表示终止的右大括号后必须换行。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.braces.style.key"
+                         implementationClass="com.code.inspections.ali.style.BracesStyleInspection"/>
+        <!--  【强制】左小括号和右边相邻字符之间不需要空格；右小括号和左边相邻字符之间也不需要空格；而左大括号前需要加空格。详见第 5 条下方正例提示。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.braces.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.BracesSpacesInspection"/>
+        <!--  【强制】if / for / while / switch / do 等保留字与左右括号之间都必须加空格。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.reserved.words.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.ReservedWordsSpacesInspection"/>
+        <!--  【强制】任何二目、三目运算符的左右两边都需要加一个空格。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.operator.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.OperatorSpacingInspection"/>
+        <!--  【强制】采用 4 个空格缩进，禁止使用 Tab 字符。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.indent.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.IndentationAndTabInspection"/>
+        <!--  【强制】注释的双斜线与注释内容之间有且仅有一个空格。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.comment.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.CommentSpacesInspection"/>
+        <!--  【强制】在进行类型强制转换时，右括号与强制转换值之间不需要任何空格隔开。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.cast.spaces.key"
+                         implementationClass="com.code.inspections.ali.style.NoSpaceBetweenCastAndValueInspection"/>
+        <!-- 【强制】 单行字符数限制不超过 120 个，超出需要换行，换行时遵循如下原则：
+                1）第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩进，参考示例。
+                2）运算符与下文一起换行。
+                3）方法调用的点符号与下文一起换行。
+                4）方法调用中的多个参数需要换行时，在逗号后进行。
+                5）在括号前不要换行，见反例。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.line.length.key"
+                         implementationClass="com.code.inspections.ali.style.LineLengthLimitInspection"/>
+        <!--  【强制】所有的覆写方法，必须加 @Override 注解。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="OOP" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.oop.override.annotation.key"
+                         implementationClass="com.code.inspections.ali.oop.OverrideAnnotationInspection"/>
+    </extensions>
+</idea-plugin>

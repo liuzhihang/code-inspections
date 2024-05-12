@@ -1,0 +1,36 @@
+<html>
+<body>
+<br/>
+<b style="color: #D56561;">【强制】</b>【强制】避免在子父类的成员变量之间、或者不同代码块的局部变量之间采用完全相同的命名，使可理解性降低。
+<p>
+    <span style="color: #F6CF6E;">&nbsp;&nbsp;说明：</span>子类、父类成员变量名相同，即使是 public 也是能够通过编译，而局部变量在同一方法内的不同代码块中同名
+    也是合法的，但是要避免使用。对于非 setter / getter 的参数名称也要避免与成员变量名称相同。
+    <br/>
+    <span style="color: #E1736F;">&nbsp;&nbsp;反例：</span>
+<pre>
+    <code>
+            public class ConfusingName {
+                protected int stock;
+                protected String alibaba;
+                // 非 setter/getter 的参数名称，不允许与本类成员变量同名
+                public void access(String alibaba) {
+                    if (condition) {
+                    final int money = 666;
+                        // ...
+                    }
+                    for (int i = 0; i < 10; i++) {
+                    // 在同一方法体中，不允许与其它代码块中的 money 命名相同
+                    final int money = 15978;
+                    // ...
+                    }
+                }
+            }
+            class Son extends ConfusingName {
+                // 不允许与父类的成员变量名称相同
+                private int stock;
+            }
+    </code>
+    </pre>
+</p>
+</body>
+</html>
