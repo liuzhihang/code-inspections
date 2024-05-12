@@ -105,5 +105,9 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Style" enabledByDefault="true" level="ERROR"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.style.line.length.key"
                          implementationClass="com.code.inspections.ali.style.LineLengthLimitInspection"/>
+        <!--  【强制】所有的覆写方法，必须加 @Override 注解。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="OOP" enabledByDefault="true" level="ERROR"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.oop.override.annotation.key"
+                         implementationClass="com.code.inspections.ali.oop.OverrideAnnotationInspection"/>
     </extensions>
 </idea-plugin>
