@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <title>ThreadLocalShouldRemoveInspectionTool</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<b style="color: #D56561;">【强制】</b> 自定义的 ThreadLocal 变量必须回收，尤其是在使用线程池时，因为线程经常被复用。否则可能会影响后续业务逻辑，并导致内存泄漏等意外问题。
+
+<br>
+<p>
+    尽量在代码中使用 try-finally 块进行回收。
+</p>
+<span style="color: #E1736F;">&nbsp;&nbsp;反例：</span>
+<pre><code>
+    public void test() {
+        ThreadLocal<> threadLocal = new ThreadLocal<>();
+        threadLocal.set("test");
+    }
+</code></pre>
+
+<span style="color: #6AAB71;">&nbsp;&nbsp;正例：</span>
+<pre><code>
+    public void test() {
+        ThreadLocal<> threadLocal = new ThreadLocal<>();
+        try {
+            threadLocal.set("test");
+        } finally {
+            threadLocal.remove();
+        }
+    }
+</code></pre>
+</body>
+</html>
