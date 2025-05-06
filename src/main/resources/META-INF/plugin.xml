@@ -34,14 +34,18 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.ThreadPoolCreationInspectionTool.key"
                          implementationClass="com.code.inspections.ali.concurrent.ThreadPoolCreationInspectionTool"/>
-        <!-- 【强制】 SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为 static，必须加锁，或者使用 DateUtils 工具类。  -->
+        <!-- 【强制】SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为 static，必须加锁，或者使用 DateUtils 工具类。  -->
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.AvoidCallStaticSimpleDateFormatInspectionTool.key"
                          implementationClass="com.code.inspections.ali.concurrent.AvoidCallStaticSimpleDateFormatInspectionTool"/>
-        <!-- 【强制】 使用 ScheduledExecutorService 而不是 Timer 来运行多个 TimeTask，因为如果 Timer 无法捕获异常，它会杀死所有正在运行的线程。  -->
+        <!-- 【强制】使用 ScheduledExecutorService 而不是 Timer 来运行多个 TimeTask，因为如果 Timer 无法捕获异常，它会杀死所有正在运行的线程。  -->
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.AvoidUseTimerInspectionTool.key"
                          implementationClass="com.code.inspections.ali.concurrent.AvoidUseTimerInspectionTool"/>
+        <!-- 【推荐】使用 CountDownLatch 进行异步转同步操作时，每个线程退出前必须调用 countDown 方法。线程执行代码应注意 catch 异常，确保 countDown 方法被执行到，避免主线程无法执行至 await 方法，直到超时才返回结果。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.CountDownShouldInFinallyInspectionTool.key"
+                         implementationClass="com.code.inspections.ali.concurrent.CountDownShouldInFinallyInspectionTool"/>
         <!-- Collection -->
 
         <!-- Naming Conventions -->
