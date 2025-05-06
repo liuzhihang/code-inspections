@@ -18,8 +18,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * [强制] 所有名称都不应以下划线或美元符号开头或结尾。
  *
- * @author zijun.lzh
- * @version AvoidStartWithDollarAndUnderLineNamingInspectionTool.java, v 0.1 2025年04月29日 11:33 zijun.lzh
+ * @author liuzhihang
+ * @version AvoidStartWithDollarAndUnderLineNamingInspectionTool.java, v 0.1 2025年04月29日 11:33 liuzhihang
  */
 public class AvoidStartWithDollarAndUnderLineNamingInspectionTool extends AbstractBaseJavaLocalInspectionTool {
 

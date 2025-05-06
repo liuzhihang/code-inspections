@@ -69,7 +69,7 @@ public class ThreadLocalShouldRemoveInspectionTool extends AbstractBaseJavaLocal
         if (!hasRemoveCall(field)) {
             holder.registerProblem(
                     field,
-                    CodeInspectionsBundle.message("ali.p3c.concurrent.ThreadLocalShouldRemoveInspectionTool", field.getName()),
+                    CodeInspectionsBundle.message("ali.p3c.concurrent.ThreadLocalShouldRemoveInspectionTool.message", field.getName()),
                     ProblemHighlightType.GENERIC_ERROR_OR_WARNING
 
             );

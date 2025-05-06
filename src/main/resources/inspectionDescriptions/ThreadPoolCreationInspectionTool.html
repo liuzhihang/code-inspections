@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <title>ThreadPoolCreationInspectionTool</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<b style="color: #D56561;">【强制】</b>线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，
+这样样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。
+<br>
+<span style="color: #F6CF6E;">&nbsp;&nbsp;说明：</span>Executors 返回的线程池对象的弊端如下：
+<ol>
+    <li>FixedThreadPool 和 SingleThreadPool：
+        允许的请求队列长度为 Integer.MAX_VALUE，可能会堆积大量的请求，从而导致 OOM。
+    </li>
+    <li>CachedThreadPool：
+        允许的创建线程数量为 Integer.MAX_VALUE，可能会创建大量的线程，从而导致 OOM。
+    </li>
+</ol>
+
+</body>
+</html>

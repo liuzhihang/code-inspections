@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <title>AvoidCallStaticSimpleDateFormatInspectionTool</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<b style="color: #D56561;">【强制】</b> SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为 static， 必须加锁，或者使用
+DateUtils 工具类。
+<br>
+<span style="color: #6AAB71;">&nbsp;&nbsp;正例：</span>
+<pre><code>
+    public class Demo {
+        private static final ThreadLocal&lt;DateFormat&gt; df = new ThreadLocal&lt;DateFormat&gt;() {
+            @Override
+            protected DateFormat initialValue() {
+                return new SimpleDateFormat("yyyy-MM-dd");
+            }
+        };
+    }
+</code></pre>
+
+<span style="color: #F6CF6E;">&nbsp;&nbsp;说明：</span>如果是 JDK8 的应用，可以使用 Instant 代替 Date，LocalDateTime 代替 Calendar，
+DateTimeFormatter 代替 SimpleDateFormat，官方给出的解释：simple beautiful strong immutable thread-safe。
+</body>
+</html>  
