@@ -38,6 +38,10 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.AvoidCallStaticSimpleDateFormatInspectionTool.key"
                          implementationClass="com.code.inspections.ali.concurrent.AvoidCallStaticSimpleDateFormatInspectionTool"/>
+        <!-- 【强制】 使用 ScheduledExecutorService 而不是 Timer 来运行多个 TimeTask，因为如果 Timer 无法捕获异常，它会杀死所有正在运行的线程。  -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.AvoidUseTimerInspectionTool.key"
+                         implementationClass="com.code.inspections.ali.concurrent.AvoidUseTimerInspectionTool"/>
         <!-- Collection -->
 
         <!-- Naming Conventions -->

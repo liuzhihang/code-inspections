@@ -1,0 +1,11 @@
+<html lang="en">
+<head>
+    <title>AvoidUseTimerInspectionTool</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<b style="color: #D56561;">【强制】</b> 多线程并行处理定时任务时，Timer 运行多个 TimeTask 时，只要其中之一没有捕获抛出的异 常，其它任务便会自动终止运行，使用
+ScheduledExecutorService 则没有这个问题。
+
+</body>
+</html>
