@@ -72,7 +72,7 @@ public class AvoidStartWithDollarAndUnderLineNamingInspectionTool extends Abstra
         if (name.startsWith("_") || name.startsWith("$") || name.endsWith("_") || name.endsWith("$")) {
             holder.registerProblem(
                     element,
-                    CodeInspectionsBundle.message("ali.p3c.naming.AvoidStartWithDollarAndUnderLineNamingInspectionTool", name),
+                    CodeInspectionsBundle.message("ali.p3c.naming.AvoidStartWithDollarAndUnderLineNamingInspectionTool.message", name),
                     ProblemHighlightType.GENERIC_ERROR_OR_WARNING,
                     new QuickFix()
             );

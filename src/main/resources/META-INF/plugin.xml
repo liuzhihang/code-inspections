@@ -50,7 +50,12 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.AvoidConcurrentCompetitionRandomInspectionTool.key"
                          implementationClass="com.code.inspections.ali.concurrent.AvoidConcurrentCompetitionRandomInspectionTool"/>
-        <!-- Collection -->
+
+        <!-- Set -->
+        <!-- 【强制】ArrayList 的 subList 结果不可强转成 ArrayList，否则会抛出 ClassCastException 异常：java.util.RandomAccessSubList cannot be cast to java.util.ArrayList。 -->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Set" enabledByDefault="true" level="WARNING"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.set.ClassCastExceptionWithSubListToArrayListInspectionTool.key"
+                         implementationClass="com.code.inspections.ali.set.ClassCastExceptionWithSubListToArrayListInspectionTool"/>
 
         <!-- Naming Conventions -->
 
