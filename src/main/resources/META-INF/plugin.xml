@@ -46,6 +46,10 @@
         <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
                          bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.CountDownShouldInFinallyInspectionTool.key"
                          implementationClass="com.code.inspections.ali.concurrent.CountDownShouldInFinallyInspectionTool"/>
+        <!-- 【推荐】避免 Random 实例被多线程使用，虽然共享该实例是线程安全的，但会因竞争同一 seed 导致的性能下降。-->
+        <localInspection language="JAVA" groupPath="Ali-P3C" groupName="Concurrency" enabledByDefault="true" level="WARNING"
+                         bundle="bundle.CodeInspectionsBundle" key="ali.p3c.concurrent.AvoidConcurrentCompetitionRandomInspectionTool.key"
+                         implementationClass="com.code.inspections.ali.concurrent.AvoidConcurrentCompetitionRandomInspectionTool"/>
         <!-- Collection -->
 
         <!-- Naming Conventions -->

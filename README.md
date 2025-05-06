@@ -9,9 +9,9 @@
 |  √   | 3  | 【强制】线程资源必须通过线程池提供，不允许在应用中自行显式创建线程。                                                                                               | Warning |
 |  √   | 4  | 【强制】线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。                                       | Warning |
 |  √   | 5  | 【强制】SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为 static，必须加锁，或者使用 DateUtils 工具类。                                            | Warning |
-|  x   | 6  | 【强制】使用 ScheduledExecutorService 而不是 Timer 来运行多个 TimeTask，因为如果 Timer 无法捕获异常，它会杀死所有正在运行的线程。                                        | Warning |
-|  x   | 7  | 【强制】在使用 CountDownLatch 将异步操作转换为同步操作时，每个线程在退出之前必须调用 countdown 方法。确保在线程运行期间捕获任何异常，以便执行 countdown 方法。如果主线程无法到达 await 方法，程序将在超时之前返回。 | Warning |
-|  x   | 8  | 【强制】避免多个线程使用同一个 Random 实例。虽然它是线程安全的，但在相同种子上的竞争会影响性能。                                                                             | Warning |
+|  √   | 6  | 【强制】使用 ScheduledExecutorService 而不是 Timer 来运行多个 TimeTask，因为如果 Timer 无法捕获异常，它会杀死所有正在运行的线程。                                        | Warning |
+|  √   | 7  | 【推荐】在使用 CountDownLatch 将异步操作转换为同步操作时，每个线程在退出之前必须调用 countdown 方法。确保在线程运行期间捕获任何异常，以便执行 countdown 方法。如果主线程无法到达 await 方法，程序将在超时之前返回。 | Warning |
+|  √   | 8  | 【推荐】避免多个线程使用同一个 Random 实例。虽然它是线程安全的，但在相同种子上的竞争会影响性能。                                                                             | Warning |
 
 ## 命名约定
 
